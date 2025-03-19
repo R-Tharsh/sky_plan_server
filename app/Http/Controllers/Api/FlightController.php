@@ -18,10 +18,10 @@ class FlightController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'flight_no' => 'required|string',
-            'origin' => 'required|string',
-            'destination' => 'required|string',
-            'time' => 'required|string',
+            'flight_no' => 'sometimes|string',
+            'origin' => 'sometimes|string',
+            'destination' => 'sometimes|string',
+            'time' => 'sometimes|string',
         ]);
 
         $flight = $this->flightService->createFlight($validated);

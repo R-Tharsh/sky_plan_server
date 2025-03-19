@@ -15,6 +15,7 @@ class FlightService implements FlightServiceInterface
 
     public function createFlight(array $data)
     {
+
         return $this->flightRepository->create($data);
     }
 
