@@ -80,4 +80,10 @@ class AirportDetailController extends Controller
         $message = $this->service->importCSV($request);
         return $this->successResponse(null, $message['message']);
     }
+
+    public function searchByIdentFirstLetter($letter)
+    {
+        $airports = $this->service->getAirportsByIdentFirstLetter($letter);
+        return $this->successResponse($airports, "Matching airports fetched successfully");
+    }
 }
