@@ -38,4 +38,9 @@ class AirportDetailRepository implements AirportDetailRepositoryInterface
     {
         return AirportDetail::insertOrIgnore($data);
     }
+
+    public function getByIdentFirstLetter($letter)
+    {
+        return AirportDetail::where('ident', 'like', $letter . '%')->get();
+    }
 }

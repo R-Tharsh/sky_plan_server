@@ -83,4 +83,8 @@ class AirportDetailService
 
         return ['message' => 'CSV data imported successfully, duplicates skipped'];
     }
+    public function getAirportsByIdentFirstLetter($letter)
+    {
+        return $this->repository->getByIdentFirstLetter($letter);
+    }
 }

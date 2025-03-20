@@ -25,3 +25,5 @@ Route::prefix('flights')->group(function () {
     Route::put('/{id}', [FlightController::class, 'update']);
     Route::delete('/{id}', [FlightController::class, 'destroy']);
 });
+
+Route::get('airport/search/{letter}', [AirportDetailController::class, 'searchByIdentFirstLetter']);
